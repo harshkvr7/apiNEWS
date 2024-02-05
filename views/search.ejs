@@ -1,0 +1,73 @@
+<%- include("header.ejs") %>
+
+    <section class="search-header-container">
+        
+        <div class="search-header-main" style="border-bottom: 1px solid rgb(182, 182, 182);">
+            <div>
+                <% if(locals.topic) {%>
+                    <h1>Search results for <span style="text-decoration: underline;"><%= topic %></span></h1>
+                    <% } %>
+            </div>
+            <form method="post" action="/search">
+                <input type="text" class="search-header-main-textbox" id="query" name="query" placeholder="Search for Articles">
+                <input type="number" class="search-header-main-page" id="page" name="page" placeholder="Page No.">
+                <button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                        class="bi bi-search" viewBox="0 0 16 16">
+                        <path
+                            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                    </svg>
+                </button>
+                
+            </form>
+        </div>
+        <% if(locals.topic) {%>
+        <div class="search-header-main">
+            <div>
+                
+                    <h3 style="margin: 0px;">Page : <span ><%= page %></span></h3>
+                    
+            </div>
+        </div>
+        <% } %>
+    </section>
+
+    <% if(locals.content){ %>
+        <div class="world-content-container search-content-container">
+            <% if(locals.content.response.meta.hits==0){ %>
+                    <h1>0 Articles Found</h1>
+                <% }else{ %>
+                    <% for(let i=0 ; i < content.response.docs.length ; i++) {%>
+
+                        <div class="wcc-element">
+                            <div class="wcce-text">
+                                <div class="wcce-text-upper">
+                                    <h4 style="margin-top: 0px;">
+                                        <%= content.response.docs[i].pub_date.slice(0,10) %>
+                                    </h4>
+                                    <h2>
+                                        <%= content.response.docs[i].headline.main %>
+                                    </h2>
+                                    <h4 class="home-left-std-abs">
+                                        <%= content.response.docs[i].abstract %>
+                                    </h4>
+                                </div>
+                                <div class="wcce-text-lower">
+                                    <a href="<%= content.response.docs[i].web_url %>">Read More</a>
+                                </div>
+                            </div>
+                            <% if (locals.content.response.docs[i].multimedia[0]){%>
+                            <div class="wcce-image">
+                                <img src="https://static01.nyt.com/<%=  content.response.docs[i].multimedia[0].url %>">
+                            </div>
+                            <% } %>
+                        </div>
+
+                        <% } %>
+                            <% } %>
+        </div>
+        <% }else{ %>
+
+            <div class="world-content-container"></div>
+                <h1>Search for Articles</h1>
+            <% } %>

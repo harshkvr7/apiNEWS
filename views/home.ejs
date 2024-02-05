@@ -1,0 +1,173 @@
+<%- include("header.ejs") %>
+
+    <div class="home-container">
+        <div class="home-left-container">
+
+            <div class="home-left-standard">
+                <div class="left-standard-large lst-item-1">
+                    <img src="<%= content.results[0].multimedia[0].url %>">
+                    <h2 class="home-left-std-title">
+                        <%= content.results[0].title %>
+                    </h2>
+                    <h4 class="home-left-std-abs">
+                        <%= content.results[0].abstract %>
+                    </h4>
+                    <a href="<%= content.results[0].url %>">Read More</a>
+                </div>
+
+                <div class="left-standard-small lst-item-2">
+                    <h3 class="home-left-std-title">
+                        <%= content.results[1].title %>
+                    </h3>
+                    <h5 class="home-left-std-abs">
+                        <%= content.results[1].abstract %>
+                    </h5>
+                    <a href="<%= content.results[1].url %>">Read More</a>
+                </div>
+
+                <div class="left-standard-small lst-item-3">
+                    <h3 class="home-left-std-title">
+                        <%= content.results[2].title %>
+                    </h3>
+                    <h5 class="home-left-std-abs">
+                        <%= content.results[2].abstract %>
+                    </h5>
+                    <a href="<%= content.results[2].url %>">Read More</a>
+                </div>
+
+                <div class="left-standard-small lst-item-4">
+                    <h3 class="home-left-std-title">
+                        <%= content.results[3].title %>
+                    </h3>
+                    <h5 class="home-left-std-abs">
+                        <%= content.results[3].abstract %>
+                    </h5>
+                    <a href="<%= content.results[3].url %>">Read More</a>
+                </div>
+            </div>
+
+            <div class="home-left-standard">
+                <div class="left-standard-large lst-item-1">
+                    <img src="<%= content.results[4].multimedia[0].url %>">
+                    <h2>
+                        <%= content.results[4].title %>
+                    </h2>
+                    <h4 class="home-left-std-abs">
+                        <%= content.results[4].abstract %>
+                    </h4>
+                    <a href="<%= content.results[4].url %>">Read More</a>
+                </div>
+
+                <div class="left-standard-small lst-item-2">
+                    <h3>
+                        <%= content.results[5].title %>
+                    </h3>
+                    <h5 class="home-left-std-abs">
+                        <%= content.results[5].abstract %>
+                    </h5>
+                    <a href="<%= content.results[5].url %>">Read More</a>
+                </div>
+
+                <div class="left-standard-small lst-item-3">
+                    <h3>
+                        <%= content.results[6].title %>
+                    </h3>
+                    <h5 class="home-left-std-abs">
+                        <%= content.results[6].abstract %>
+                    </h5>
+                    <a href="<%= content.results[6].url %>">Read More</a>
+                </div>
+
+                <div class="left-standard-small lst-item-4">
+                    <h3>
+                        <%= content.results[7].title %>
+                    </h3>
+                    <h5 class="home-left-std-abs">
+                        <%= content.results[7].abstract %>
+                    </h5>
+                    <a href="<%= content.results[7].url %>">Read More</a>
+                </div>
+            </div>
+
+            <% for(let i=8 ; i < 14 ; i++){ %>
+                <div class="home-left-list">
+                    <div class="hll-image">
+                        <img src="<%= content.results[i].multimedia[0].url %>">
+                    </div>
+                    <div class="hll-text">
+                        <div class="hll-text-upper">
+                            <h3>
+                                <%= content.results[i].title %>
+                            </h3>
+                            <h5 class="home-left-std-abs">
+                                <%= content.results[i].abstract %>
+                            </h5>
+                        </div>
+                        <div class="hll-text-lower">
+                            <a href="<%= content.results[i].url %>">Read More</a>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <% } %>
+
+                    <div class="home-left-extra">
+                        <% var j = 0 %>
+                        <% for(let i=0; j < 26 ;i++ ){ %>
+                            <% if(locals.content2.results[i].multimedia[2] && locals.content2.results[i].multimedia[2].url){ %>
+                                    <% j++ %>
+                                    <div class="hle-element">
+                                        <div class="hle-upper">
+                                            <img src="<%= content2.results[i].multimedia[2].url %>">
+                                            <h3>
+                                                <%= content2.results[i].title %>
+                                            </h3>
+                                            <h5 class="home-left-std-abs">
+                                                <%= content2.results[i].abstract %>
+                                            </h5>
+                                        </div>
+                                        <div class="hle-lower">
+                                            <a href="<%= content2.results[i].url %>">Read More</a>
+                                        </div>
+                                    </div>
+                                    <% } %>
+                                    <% if (j == 19) {j =i}%>
+                                        <% } %>
+                    </div>
+
+        </div>
+
+
+
+        <div class="home-right-container">
+            <% for(let i=14; i < content.results.length ; i++) {%>
+                <div class="home-right-element">
+                    <img src="<%= content.results[i].multimedia[1].url %>">
+                    <h3>
+                        <%= content.results[i].title %>
+                    </h3>
+                    <h5 class="home-left-std-abs">
+                        <%= content.results[i].abstract %>
+                    </h5>
+                    <a href="<%= content.results[i].url %>">Read More</a>
+                </div>
+                <% } %>
+                    <% var k = 0 %>
+                    <% for(i = j; k < 7; i++) {%>
+                        <% if(locals.content2.results[i].multimedia[2] && locals.content2.results[i].multimedia[2].url){ %>
+                            <% k++ %>
+                        <div class="home-right-element">
+                            <img src="<%= content2.results[i].multimedia[2].url %>">
+                            <h3>
+                                <%= content2.results[i].title %>
+                            </h3>
+                            <h5 class="home-left-std-abs">
+                                <%= content2.results[i].abstract %>
+                            </h5>
+                            <a href="<%= content2.results[i].url %>">Read More</a>
+                        </div>
+                        <% } %>
+                        <% } %>
+        </div>
+    </div>

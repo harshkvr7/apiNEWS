@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News-App</title>
+
+    <link rel="stylesheet" href="/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="header-menu-overmenu" >
+        <div class="overmenu-close-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8z"/>
+              </svg>
+        </div>
+
+        <div class="overmenu-menu">
+            <div class="header-menu-item header-menu-world overmenu-item">
+                
+               <a href="/world">World</a>
+            </div>
+
+            <div class="header-menu-item header-menu-business overmenu-item">
+                
+                <a href="/business">Business</a>
+            </div>
+
+            <div class="header-menu-item header-menu-arts overmenu-item">
+                
+                <a href="/arts">Arts</a>
+            </div>
+
+            <div class="header-menu-item header-menu-technology overmenu-item">
+                
+                <a href="/technology">Technology</a>
+            </div>
+
+            <div class="header-menu-item header-menu-politics overmenu-item">
+                
+                <a href="/politics">Politics</a>
+            </div>
+
+            <div class="header-menu-item header-menu-travel overmenu-item">
+                
+                <a href="/travel">Travel</a>
+            </div>
+
+            <div class="header-menu-item header-menu-health overmenu-item">
+                
+                <a href="/health">Health</a>
+            </div>
+
+            <div class="header-menu-item header-menu-movies overmenu-item">
+                
+                <a href="/movies">Movies</a>
+            </div>
+
+            <div class="header-menu-item header-menu-fashion overmenu-item">
+                  
+                <a href="/fashion">Fashion</a>            
+            </div>
+
+            <div class="header-menu-item header-menu-food overmenu-item">
+              
+               <a href="/food"> Food</a>            
+            </div>
+
+        </div>
+    </div>
+    <div class="header-container">
+        <div class="header-title">
+            <div class="header-date-time">
+                <%= date_time.day %>, <%= date_time.month %> <%= date_time.date %>, <%= date_time.year %>
+            </div>
+            
+            <div class="header-menu-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" class="bi bi-list" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                  </svg>
+            </div>
+
+            <div class="header-main-text">
+                <h1>{api:} NEWS</h1>
+            </div>
+
+            <div class="header-search">
+                <a style="color: black;" href="/search">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </a>
+            </div>
+        </div>
+
+        <div class="header-menu-2">
+            <div class=" header-menu-item">
+                <%= date_time.day %>, <%= date_time.month %> <%= date_time.date %>, <%= date_time.year %>
+            </div>
+        </div>
+
+        <div class="header-menu">
+            <div class="header-menu-item header-menu-world">
+                
+               <a href="/world">World</a>
+            </div>
+
+            <div class="header-menu-item header-menu-business">
+                
+                <a href="/business">Business</a>
+            </div>
+
+            <div class="header-menu-item header-menu-arts">
+                
+                <a href="/arts">Arts</a>
+            </div>
+
+            <div class="header-menu-item header-menu-technology">
+                
+                <a href="/technology">Technology</a>
+            </div>
+
+            <div class="header-menu-item header-menu-politics">
+                
+                <a href="/politics">Politics</a>
+            </div>
+
+            <div class="header-menu-item header-menu-travel">
+                
+                <a href="/travel">Travel</a>
+            </div>
+
+            <div class="header-menu-item header-menu-health">
+                
+                <a href="/health">Health</a>
+            </div>
+
+            <div class="header-menu-item header-menu-movies">
+                
+                <a href="/movies">Movies</a>
+            </div>
+
+            <div class="header-menu-item header-menu-fashion">
+                  
+                <a href="/fashion">Fashion</a>            
+            </div>
+
+            <div class="header-menu-item header-menu-food">
+              
+               <a href="/food"> Food</a>            
+            </div>
+
+        </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(".header-main-text").click(function () { 
+            window.location.replace("/"); 
+        });
+        $(".header-menu-icon").click(function(){
+            $(".header-menu-overmenu").css("display","flex")
+        })
+        $(".overmenu-close-icon").click(function(){
+            $(".header-menu-overmenu").css("display","none")
+        })
+    </script>
+</body>
+
+</html>
