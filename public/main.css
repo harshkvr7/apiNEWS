@@ -516,10 +516,7 @@ body{
     .header-date-time{
         font-size: 10px;
     }
-    .header-search svg{
-        width: 15px;
-        height: 15px;
-    }
+    
 }
 @media (max-width : 610px){
     .header-menu{
