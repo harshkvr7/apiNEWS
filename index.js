@@ -86,7 +86,7 @@ function get_date_time() {
 }
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 4000;
 
 app.use(express.static("public"));
 app.use(bodyparser.urlencoded({ extended: true }));
@@ -281,6 +281,6 @@ app.post("/search" , async (req,res) => {
     }
 })
 
-app.listen(port, () => {
+app.listen( port, () => {
     console.log(`Server running at port : ${port}`);
 })
