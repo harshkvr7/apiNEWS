@@ -509,9 +509,6 @@ body{
     .search-header-main-textbox{
         width: 150px;
     }
-    .header-menu-2{
-        background-color: white;
-    }
 }
 @media (max-width : 850px){
     .header-main-text{
