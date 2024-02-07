@@ -2,6 +2,7 @@ body{
     font-family: "Tinos", serif;
     margin: 0px;
 }
+
 /* header title        top half of header*/
 
 .header-container{
@@ -38,6 +39,24 @@ body{
 .header-main-text h1{
     margin: 0px;
     font-weight: 100;
+}
+.dark-mode-btn{
+    padding: 6px;
+    position: absolute;
+    right: 37px;
+}
+.dark-mode-btn:hover{
+    background-color: rgb(243, 243, 243);
+}
+
+.light-mode-btn{
+    display: none;
+    padding: 6px;
+    position: absolute;
+    right: 37px;
+}
+.light-mode-btn:hover{
+    background-color: rgb(243, 243, 243);
 }
 .header-search{
     padding: 6px;

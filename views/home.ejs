@@ -143,7 +143,9 @@
         <div class="home-right-container">
             <% for(let i=14; i < content.results.length ; i++) {%>
                 <div class="home-right-element">
+                    <% if(locals.content.results[i].multimedia){ %>
                     <img src="<%= content.results[i].multimedia[1].url %>">
+                    <% } %>
                     <h3>
                         <%= content.results[i].title %>
                     </h3>
