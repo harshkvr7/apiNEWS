@@ -3,12 +3,6 @@ body{
     margin: 0px;
 }
 
-@keyframes example {
-    0%   {background-color: rgb(255, 255, 255);}
-    
-    100% {background-color: rgb(0, 0, 0);}
-  }
-
 /* header title        top half of header*/
 
 .header-container{
@@ -47,7 +41,8 @@ body{
     font-weight: 100;
 }
 .dark-mode-btn{
-    padding: 6px;
+    padding: 7px;
+    padding-top: 6px;
     position: absolute;
     right: 37px;
 }
@@ -57,7 +52,8 @@ body{
 
 .light-mode-btn{
     display: none;
-    padding: 6px;
+    padding: 7px;
+    padding-top: 6px;
     position: absolute;
     right: 37px;
 }
@@ -528,6 +524,7 @@ body{
 @media (max-width : 630px){
     .search-header-main form{
         display: flex;
+        gap: 7px;
         flex-direction: column;
         align-items: flex-end;
     }
