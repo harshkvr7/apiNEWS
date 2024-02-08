@@ -448,6 +448,9 @@ body{
     display: none;
     background-color: rgb(240, 240, 240);
 }
+.header-menu-2-item:hover{
+    text-decoration: none;
+}
 .header-menu-icon{
     padding-top: 10px;
     font-family: sans-serif;
