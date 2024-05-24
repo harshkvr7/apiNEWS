@@ -100,6 +100,8 @@ app.get("/", async (req, res) => {
         var result2 = response2.data;
         var result = response.data;
 
+        console.log(response.data);
+
         res.render("home.ejs", { date_time: get_date_time(), content: result, content2: result2 });
     } catch (error) {
 
