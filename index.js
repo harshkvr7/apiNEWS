@@ -113,7 +113,7 @@ app.get("/", async (req, res) => {
 app.get("/world", async (req, res) => {
     var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
     var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=50");
-    
+
     var result2 = response2.data;
     var result = response.data;
 
@@ -122,14 +122,14 @@ app.get("/world", async (req, res) => {
 
 app.get("/world/asia", async (req, res) => {
     var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
-var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
+    var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
     var result2 = response2.data;
     var result = response.data;
     res.render("world.ejs", { date_time: get_date_time(), content: result, content2: result2, keyword: "Asia Pacific" });
 })
 app.get("/world/america", async (req, res) => {
     var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
-var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
+    var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
     var result2 = response2.data;
     var result = response.data;
     res.render("world.ejs", { date_time: get_date_time(), content: result, content2: result2, keyword: "Americas" });
@@ -143,14 +143,14 @@ app.get("/world/europe", async (req, res) => {
 })
 app.get("/world/africa", async (req, res) => {
     var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
-var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
+    var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
     var result2 = response2.data;
     var result = response.data;
     res.render("world.ejs", { date_time: get_date_time(), content: result, content2: result2, keyword: "Africa" });
 })
 app.get("/world/middle-east", async (req, res) => {
     var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
-var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
+    var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
     var result2 = response2.data;
     var result = response.data;
     res.render("world.ejs", { date_time: get_date_time(), content: result, content2: result2, keyword: "Middle East" });
@@ -163,7 +163,7 @@ app.get("/business", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/business.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("business.ejs", { date_time: get_date_time(), content: result});
+        res.render("business.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
@@ -174,7 +174,7 @@ app.get("/arts", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("arts.ejs", { date_time: get_date_time(), content: result});
+        res.render("arts.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
@@ -185,7 +185,7 @@ app.get("/technology", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("technology.ejs", { date_time: get_date_time(), content: result});
+        res.render("technology.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
@@ -196,7 +196,7 @@ app.get("/politics", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("politics.ejs", { date_time: get_date_time(), content: result});
+        res.render("politics.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
@@ -207,7 +207,7 @@ app.get("/travel", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/travel.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("travel.ejs", { date_time: get_date_time(), content: result});
+        res.render("travel.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
@@ -218,7 +218,7 @@ app.get("/health", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/health.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("health.ejs", { date_time: get_date_time(), content: result});
+        res.render("health.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
@@ -229,7 +229,7 @@ app.get("/movies", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/movies.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("movies.ejs", { date_time: get_date_time(), content: result});
+        res.render("movies.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
@@ -240,7 +240,7 @@ app.get("/fashion", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/fashion.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("fashion.ejs", { date_time: get_date_time(), content: result});
+        res.render("fashion.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
@@ -251,38 +251,38 @@ app.get("/food", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/food.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("food.ejs", { date_time: get_date_time(), content: result});
+        res.render("food.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
 
     }
 })
 
-app.get("/search" , async (req,res) => {
+app.get("/search", async (req, res) => {
     try {
         var response = await axios.get("https://api.nytimes.com/svc/search/v2/articlesearch.json?q=&api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&sort=newest");
         var result = response.data;
 
-        res.render("search.ejs", { date_time: get_date_time(), content: result});
+        res.render("search.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-        
+
     }
 })
 
-app.post("/search" , async (req,res) => {
+app.post("/search", async (req, res) => {
     console.log(req.body);
 
     var page = req.body.page || 1;
 
     try {
-        var response = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${req.body.query}&api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&sort=relevance&page=${page-1}`);
+        var response = await axios.get(`https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${req.body.query}&api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&sort=relevance&page=${page - 1}`);
         var result = response.data;
 
-        res.render("search.ejs", { date_time: get_date_time(), content: result , topic : req.body.query , page : page });
+        res.render("search.ejs", { date_time: get_date_time(), content: result, topic: req.body.query, page: page });
     } catch (error) {
-        
+
     }
 })
 
-app.listen( port, () => {
+app.listen(port, () => {
     console.log(`Server running at port : ${port}`);
 })
