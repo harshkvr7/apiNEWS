@@ -163,7 +163,7 @@ app.get("/business", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/business.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("business.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Business News" });
     } catch (error) {
         console.log(error);
     }
@@ -174,7 +174,7 @@ app.get("/arts", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/arts.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("arts.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Arts News" });
     } catch (error) {
         console.log(error);
     }
@@ -185,7 +185,7 @@ app.get("/technology", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/technology.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("technology.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Technology News" });
     } catch (error) {
         console.log(error);
     }
@@ -196,7 +196,7 @@ app.get("/politics", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/politics.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("politics.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Politics News" });
     } catch (error) {
         console.log(error);
     }
@@ -207,7 +207,7 @@ app.get("/travel", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/travel.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("travel.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Travel News" });
     } catch (error) {
         console.log(error);
     }
@@ -218,7 +218,7 @@ app.get("/health", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/health.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("health.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Health News" });
     } catch (error) {
         console.log(error);
     }
@@ -229,7 +229,7 @@ app.get("/movies", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/movies.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("movies.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Theatre News" });
     } catch (error) {
         console.log(error);
     }
@@ -240,7 +240,7 @@ app.get("/fashion", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/fashion.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("fashion.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Fashion News" });
     } catch (error) {
         console.log(error);
     }
@@ -251,7 +251,7 @@ app.get("/food", async (req, res) => {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/food.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
         var result = response.data;
 
-        res.render("food.ejs", { date_time: get_date_time(), content: result });
+        res.render("template.ejs", { date_time: get_date_time(), content: result, topic : "Food News" });
     } catch (error) {
         console.log(error);
     }
