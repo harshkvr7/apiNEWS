@@ -489,6 +489,19 @@ body{
     font-size: 20px;
 }
 
+#footer-main{
+    padding-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gt-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+}
+
 
 /*   MEDIA QUERY     RESPONSIVE*/
 @media (max-width : 790px){
