@@ -108,8 +108,6 @@ app.get("/", async (req, res) => {
     }
 })
 
-
-
 app.get("/world", async (req, res) => {
     var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
     var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=50");
@@ -121,11 +119,15 @@ app.get("/world", async (req, res) => {
 })
 
 app.get("/world/asia", async (req, res) => {
-    var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
-    var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
-    var result2 = response2.data;
-    var result = response.data;
-    res.render("world.ejs", { date_time: get_date_time(), content: result, content2: result2, keyword: "Asia Pacific" });
+    try {
+        var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
+        var response2 = await axios.get("https://api.nytimes.com/svc/news/v3/content/nyt/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6&limit=100");
+        var result2 = response2.data;
+        var result = response.data;
+        res.render("world.ejs", { date_time: get_date_time(), content: result, content2: result2, keyword: "Asia Pacific" });
+    } catch (error) {
+        console.log(error);
+    }
 })
 app.get("/world/america", async (req, res) => {
     var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/world.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
@@ -156,8 +158,6 @@ app.get("/world/middle-east", async (req, res) => {
     res.render("world.ejs", { date_time: get_date_time(), content: result, content2: result2, keyword: "Middle East" });
 })
 
-
-
 app.get("/business", async (req, res) => {
     try {
         var response = await axios.get("https://api.nytimes.com/svc/topstories/v2/business.json?api-key=vqiTSo6dodjWPj4beyuCvhdqqwaNHSq6");
@@ -165,7 +165,7 @@ app.get("/business", async (req, res) => {
 
         res.render("business.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -176,7 +176,7 @@ app.get("/arts", async (req, res) => {
 
         res.render("arts.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -187,7 +187,7 @@ app.get("/technology", async (req, res) => {
 
         res.render("technology.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -198,7 +198,7 @@ app.get("/politics", async (req, res) => {
 
         res.render("politics.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -209,7 +209,7 @@ app.get("/travel", async (req, res) => {
 
         res.render("travel.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -220,7 +220,7 @@ app.get("/health", async (req, res) => {
 
         res.render("health.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -231,7 +231,7 @@ app.get("/movies", async (req, res) => {
 
         res.render("movies.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -242,7 +242,7 @@ app.get("/fashion", async (req, res) => {
 
         res.render("fashion.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -253,7 +253,7 @@ app.get("/food", async (req, res) => {
 
         res.render("food.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -264,7 +264,7 @@ app.get("/search", async (req, res) => {
 
         res.render("search.ejs", { date_time: get_date_time(), content: result });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
@@ -279,7 +279,7 @@ app.post("/search", async (req, res) => {
 
         res.render("search.ejs", { date_time: get_date_time(), content: result, topic: req.body.query, page: page });
     } catch (error) {
-
+        console.log(error);
     }
 })
 
